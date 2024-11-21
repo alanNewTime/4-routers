@@ -4,10 +4,19 @@ import { mockUsers } from "../utils/constants.mjs";
 // i saved my middlewares inside this file
 import { resolveIndexByUserId } from "../utils/middlewares.mjs";
 
+// after having installed cors i import it here
+//it helps when we want to send our api call to a frontend program.Otherwise
+//i will have a blockage
+import cors from "cors";
+
 //import and create a router object START
 import { Router } from "express";
 const router = Router();
 //import and create a router object END
+
+//make cours a global middleware.
+//after import i use the cors in this way
+router.use(cors());
 
 // MOVED MY VALIDATION MIDDLEWARE FRON INDEX TO HERE
 //Creating a new middleware for the validations where i define which columns should

@@ -1,7 +1,15 @@
 import { mockProducts } from "../utils/constants.mjs";
 import { query, validationResult } from "express-validator";
+// after having installed cors i import it here
+//it helps when we want to send our api call to a frontend program.Otherwise
+//i will have a blockage
+import cors from "cors";
 import { Router } from "express";
 const router = Router();
+
+//make cours a global middleware.
+//after import i use the cors in this way
+router.use(cors());
 
 router.get(
   "/api/products",
